@@ -147,8 +147,10 @@ DOM.bu.addEventListener("click",function(){
         sentence1.push("*sigh*")
     }
 
-    sentence1.push(wordKeys[5][(Math.ciel(d5/3)-1)])
+    sentence1.push(wordKeys[5][(Math.ceil(d5/3)-1)])
 
+
+    
     if (d2==0){
         sentence1.push(wordKeys[6][1])
     }else{
