@@ -177,9 +177,9 @@ DOM.bu.addEventListener("click",function(){
         }
     }else if (d7==3 || d7==4 || d7==8 || d7==9) {
         sentence2.push(wordKeys[10][1])
-        if (d7==1 || d7==6){
+        if (d7==3|| d7==8){
             sentence2.push(wordKeys[11][0])
-        }else if (d7==2 || d7==7){
+        }else if (d7==4|| d7==9){
             sentence2.push(wordKeys[11][1])   
         }
     }else{
