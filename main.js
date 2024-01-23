@@ -1,8 +1,12 @@
 DOM = {
     bu: document.getElementById("go"),
+    bu2: document.getElementById("go2"),
     rtext: document.getElementById("rtext"),
     rtext2: document.getElementById("rtext2"),
     rtext3: document.getElementById("rtext3"),
+    s1: document.getElementById("s1"),
+    s2:document.getElementById("s2"),
+    res4: document.getElementById("res4")
 }
 for (let i=1 ; i<=7 ;i++) {
     DOM["i".concat(i)] = document.getElementById("i".concat(i))
@@ -147,7 +151,7 @@ DOM.bu.addEventListener("click",function(){
         sentence1.push("*sigh*")
     }
 
-    sentence1.push(wordKeys[5][(Math.ceil(d5/3)-1)])
+    sentence1.push(wordKeys[5][((Math.ceil(d5/3)||1)-1)])
 
 
     
@@ -196,6 +200,129 @@ DOM.bu.addEventListener("click",function(){
 
         }
     }
-    sentence2.push(" now.")
+    sentence2.push("now.")
     DOM.rtext3.innerHTML =  sentence2.join(" ")
+    console.log(prefixes.join(", ").concat(", ").concat(
+        sentence1.join(" ")
+    ))
+    console.log(sentence2.join(" "))
 })
+
+
+function noDisplay(d1,d2,d3,d4,d5,d6,d7){
+
+    let prefixes = []
+    let sentence1 = ["I"]
+    let suffixes = []
+    let sentence2 = []
+
+    
+
+    if (d1 > 5 || d1 ==0) {
+        prefixes.push("okay")
+    }
+    sentence1.push(wordKeys[1][d1%5])
+
+    let them =""
+    if ((d3 % 5 || 5)>=4){
+        sentence1.push(wordKeys[3][d3%5])
+        them = ((d3%5==4 ) && " it") || " them"
+    }
+
+
+    if (d2 >3){
+        prefixes.push("alright")
+    }
+    sentence1.push(wordKeys[2][d2%3].concat(them) )
+    
+    
+    if (d3 >5 || d3==0){
+        prefixes.push("so")
+    }
+    if ((d3 % 5 || 5)<4){
+        sentence1.push(wordKeys[3][d3%5])
+    }
+    
+    if (d4 > 5  ||d4==0){
+        sentence1.push("across the room")
+    }
+    sentence1.push(wordKeys[4][d4%5])
+    if (d2 >6){
+        sentence1.push("*sigh*")
+    }
+
+    sentence1.push(wordKeys[5][((Math.ceil(d5/3)||1)-1)])
+
+
+    
+    if (d2==0){
+        sentence1.push(wordKeys[6][1])
+    }else{
+        sentence1.push(wordKeys[6][0])
+    }
+
+    sentence1.push(wordKeys[7][d5 && (Math.floor(d5%3) + 1)])
+
+
+    sentence1 =  prefixes.join(", ").concat(", ").concat(
+        sentence1.join(" ")
+    )
+
+
+    sentence2.push(wordKeys[8][d6%10])
+    if (d7 >5 || 0) {
+        sentence2.push(wordKeys[9][1])
+    }else {
+        sentence2.push(wordKeys[9][0])
+    }
+
+    if (d7==1 || d7==2 || d7==6 || d7==7) {
+        sentence2.push(wordKeys[10][0])
+        if (d7==1 || d7==6){
+            sentence2.push(wordKeys[11][0])
+        }else if (d7==2 || d7==7){
+            sentence2.push(wordKeys[11][1])
+        }
+    }else if (d7==3 || d7==4 || d7==8 || d7==9) {
+        sentence2.push(wordKeys[10][1])
+        if (d7==3|| d7==8){
+            sentence2.push(wordKeys[11][0])
+        }else if (d7==4|| d7==9){
+            sentence2.push(wordKeys[11][1])   
+        }
+    }else{
+        sentence2.push(wordKeys[10][2])
+        if (d7==5){
+            sentence2.push(wordKeys[11][0])
+        }else if (d7==0){
+            sentence2.push(wordKeys[11][1])
+
+        }
+    }
+    sentence2.push("now.")
+    return [sentence1,sentence2.join(" ")]
+}
+
+DOM.bu2.addEventListener("click",function(){
+    let S1 = DOM.s1.value
+    let S2= DOM.s2.value
+    for (let i = 0;i<=9999999;i++){
+            let si = i.toString()
+            let len = si.length
+            let nd = noDisplay(
+                                Number(si[len-7]||0),
+                                Number(si[len-6]||0),
+                                Number(si[len-5]||0),
+                                Number(si[len-4]||0),
+                                Number(si[len-3]||0),
+                                Number(si[len-2]||0),
+                                Number(si[len-1]||0)
+                                )
+            if (nd[0] == S1 &&  nd[1]==S2){
+
+                DOM.res4.innerHTML = "0000000".substring(0,7-si.length).concat(si)
+                return "good"
+            }
+    }
+})
+

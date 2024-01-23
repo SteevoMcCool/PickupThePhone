@@ -6,6 +6,14 @@ body {
     display: flex;
     justify-content: space-around;
     width: 80%;
+
+}
+#bottom {
+    margin: auto auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 80%;
 }
 #digits{
     display: flex;
@@ -81,7 +89,7 @@ h4 {
 }
 
 
-#digits > input {
+input {
     width: 14%;
     border-radius: 30px;
     font-size: 9em;
@@ -94,4 +102,25 @@ h4 {
     font-size: 9em;
     border-radius: 30px;
     background-color: rgb(80, 80, 80);
+}
+
+#s1, #s2 {
+    font-size: 1.5em;
+    width: 500px;
+    background-color: rgb(60,60,60);
+}
+#go2 {
+    font-size: 5em;
+    border-radius: 30px;
+    background-color: rgb(60, 60, 60);
+    position: relative;
+    bottom: 10px;
+}
+
+#res4 {
+    font-size: 4em;
+    border-radius: 5px;
+    background-color: rgb(200,200,200);
+    position: relative;
+    bottom:50px;
 }
