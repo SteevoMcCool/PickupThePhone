@@ -122,7 +122,7 @@ DOM.bu.addEventListener("click",function(){
     let them =""
     if ((d3 % 5 || 5)>=4){
         sentence1.push(wordKeys[3][d3%5])
-        them = ((d3==4) && " it") || " them"
+        them = ((d3%5==4 ) && " it") || " them"
     }
 
 
