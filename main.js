@@ -155,7 +155,7 @@ DOM.bu.addEventListener("click",function(){
         sentence1.push(wordKeys[6][0])
     }
 
-    sentence1.push(wordKeys[7][Math.floor(d5%3)])
+    sentence1.push(wordKeys[7][d5 && (Math.floor(d5%3) + 1)])
 
 
     DOM.rtext.innerHTML =  prefixes.join(", ").concat(", ").concat(
