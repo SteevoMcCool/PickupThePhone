@@ -1,0 +1,97 @@
+body {
+    background-color: rgb(127,127,127);
+}
+#top {
+    margin: auto auto;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+#digits{
+    display: flex;
+    position: relative;
+    top: 0px;
+    width: 80%;
+    justify-content: space-around;
+    align-content: space-around;
+    border-radius: 30px;
+    border-bottom: 3px solid rgb(30,30,30);
+    border-right: 3px solid rgb(65,65,65);
+    border-top: 3px solid rgb(170,170,170);
+    border-left: 3px solid rgb(100,100,100);
+    max-width: 70em;
+    background-color: rgb(80,80,80);
+}
+#results {
+    display: flex;
+    position: relative;
+    top: 0px;
+    width: 80%;
+    justify-content: space-around;
+    align-content: space-around;
+    border-radius: 30px;
+    border-bottom: 3px solid rgb(30,30,30);
+    border-right: 3px solid rgb(65,65,65);
+    border-top: 3px solid rgb(170,170,170);
+    border-left: 3px solid rgb(100,100,100);
+    max-width: 70em;
+    background-color: rgb(80,80,80);   
+    margin: auto auto; 
+}
+#r2 {
+    display: flex;
+    position: relative;
+    top: 0px;
+    width: 27%;
+    justify-content: space-around;
+    align-content: space-around;
+    border-radius: 30px;
+    border-bottom: 3px solid rgb(30,30,30);
+    border-right: 3px solid rgb(65,65,65);
+    border-top: 3px solid rgb(170,170,170);
+    border-left: 3px solid rgb(100,100,100);
+    max-width: 70em;
+    background-color: rgb(224,224,224);   
+    margin: auto auto; 
+}
+h4 {
+    font-size: 2em;
+    padding: 0px;
+    margin: 5px;
+    color: white;
+}
+#r2 > h4{
+    color:black;
+}
+#r3 {
+    display: flex;
+    position: relative;
+    top: 0px;
+    width: 64%;
+    justify-content: space-around;
+    align-content: space-around;
+    border-radius: 30px;
+    border-bottom: 3px solid rgb(30,30,30);
+    border-right: 3px solid rgb(65,65,65);
+    border-top: 3px solid rgb(170,170,170);
+    border-left: 3px solid rgb(100,100,100);
+    max-width: 70em;
+    background-color: rgb(80,80,80);   
+    margin: auto auto; 
+}
+
+
+#digits > input {
+    width: 14%;
+    border-radius: 30px;
+    font-size: 9em;
+    text-align: center;
+    color: rgb(255,255,255);
+    background-color: rgba(0,0,0,0);
+}
+
+#go {
+    font-size: 9em;
+    border-radius: 30px;
+    background-color: rgb(80, 80, 80);
+}
