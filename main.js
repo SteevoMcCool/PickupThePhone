@@ -143,6 +143,9 @@ DOM.bu.addEventListener("click",function(){
         sentence1.push("across the room")
     }
     sentence1.push(wordKeys[4][d4%5])
+    if (d2 >6){
+        sentence1.push("*sigh*")
+    }
 
     sentence1.push(wordKeys[5][Math.floor(d5/3)])
 
@@ -150,9 +153,6 @@ DOM.bu.addEventListener("click",function(){
         sentence1.push(wordKeys[6][1])
     }else{
         sentence1.push(wordKeys[6][0])
-    }
-    if (d2 >6){
-        sentence1.push("*sigh*")
     }
 
     sentence1.push(wordKeys[7][Math.floor(d5%3)])
