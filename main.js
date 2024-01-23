@@ -151,6 +151,9 @@ DOM.bu.addEventListener("click",function(){
     }else{
         sentence1.push(wordKeys[6][0])
     }
+    if (d2 >6){
+        sentence1.push("*sigh*")
+    }
 
     sentence1.push(wordKeys[7][Math.floor(d5%3)])
 
